@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+        <div class="form-group col-md-6 col-md-offset-3">
+            {% csrf_token %}
+            <p><label for="username">Nom d'utilisateur</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Nom d'utilisateur"></p>
+
+           <p><label for="password">Mot de passe</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"></p>
+           <p><input type="submit" class="btn btn-primary" value="connexion"/>
+            </p>
+
+        </div>
+    </form>
+
+
+{% endblock %}
